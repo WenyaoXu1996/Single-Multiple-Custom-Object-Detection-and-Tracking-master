@@ -1,0 +1,18 @@
+Step1: Run check-GPU.py to check whether tensorflow can accept your GPU.
+       If returns True means tensorflow can accept your GPU, otherwise you can only use CPU.
+       You can check developer.nvidia.com/cuda-gpus to ensure whether your GPU is supported.
+       And install you GPU driver through www.nvidia.com/drivers
+       Then install CUDA v10.0
+
+
+Step2: Download Yolov3 weights files from https://pjreddie.com/media/files/yolov3.weights
+       Save it in /weights folder
+
+Step3: Convert a yolo model to a tensorflow format.
+       Run convert.py in terminal and you should see message:
+       "weights loaded", "sanity check passed", "weights saved" to confirm that the model is converted successfully.
+       And you should see: checkpoint, yolov3.tf.index, yolov3.tf.data-00000-of-00001 in /weights folder.
+
+Step4: Put your dataset path in object_tracker.py line42, after "imgfolder="
+
+Step5: Run object_tracker.py
